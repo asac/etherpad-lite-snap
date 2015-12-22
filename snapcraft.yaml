@@ -1,0 +1,24 @@
+name: etherpad-lite
+version: master
+summary: a collaborative text editing webservice in node.js
+description: This example is not really production quality
+icon: icon.png
+
+services:
+  server:
+    start: runpad
+    description: etherpad-lite service
+
+parts:
+  etherpad-lite:
+    plugin: nodejs
+    node-folder: 'src'
+    source: git://github.com/asac/etherpad-lite.git
+    source-tag: run-npm-install
+  wrapper:
+    plugin: copy
+    files:
+      runpad: runpad
+  topintegration:
+    plugin: make
+    source: .
