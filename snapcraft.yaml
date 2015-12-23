@@ -1,8 +1,14 @@
 name: etherpad-lite
 version: master
+vendor: Alexander Sack <asac@ubuntu.com>
 summary: a collaborative text editing webservice in node.js
 description: This example is not really production quality
 icon: icon.png
+
+binaries:
+  server-cli:
+    exec: runpad
+    description: etherpad-lite cli binary
 
 services:
   server:
